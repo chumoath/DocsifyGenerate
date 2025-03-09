@@ -11,7 +11,7 @@ def walk_one_directory(directory, directory_prefix, level):
     if not os.path.isfile(readme_path):
         print(directory + ": README.md is not a file.")
 
-    buf_string = (" " * level) + "* [" + os.path.basename(directory) + "](/" + directory_prefix + "/)\n"
+    buf_string = ("  " * level) + "* [" + os.path.basename(directory) + "](/" + directory_prefix + "/)\n"
     sidebar_content.append(buf_string)
 
     for item in os.listdir(directory):
@@ -23,7 +23,7 @@ def walk_one_directory(directory, directory_prefix, level):
             if operator.eq(item, "README.md") or not item.endswith(".md"):
                 continue
 
-            buf_string = (" " * (level + 1)) + "* [" + os.path.basename(item_path)[:-3] + "](/" + \
+            buf_string = ("  " * (level + 1)) + "* [" + os.path.basename(item_path)[:-3] + "](/" + \
                          directory_prefix + "/" + os.path.basename(item_path)[:-3] + ")\n"
             sidebar_content.append(buf_string)
 
