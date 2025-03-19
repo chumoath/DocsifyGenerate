@@ -52,6 +52,7 @@ def main(docs_dir):
 
 if __name__ == "__main__":
     while True:
+        sidebar_content = []
         docs_dir = input("输入文档根目录(输入q退出): ")
         if operator.eq(docs_dir, "q"):
             break
